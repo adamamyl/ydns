@@ -1,4 +1,4 @@
-#!/usr/bin/env ash
+#!/bin/env ash
 #
 # yDNS Updater, updates your yDNS host.
 # Copyright (C) 2013-2015 TFMT UG (haftungsbeschr.) <support@ydns.io>
