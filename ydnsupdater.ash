@@ -4,12 +4,7 @@
 # Copyright (C) 2013-2015 TFMT UG (haftungsbeschr.) <support@ydns.io>
 
 
-##
 # Define your yDNS account details and host you'd like to update.
-##
-
-set -x
-
 YDNS_USER="user@host.xx"
 YDNS_PASSWD="secret"
 YDNS_HOST="myhost.ydns.eu"
