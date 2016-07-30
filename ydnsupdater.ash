@@ -10,7 +10,7 @@ YDNS_PASSWD="secret"
 YDNS_HOST="myhost.ydns.eu"
 YDNS_LASTIP_FILE="/tmp/ydns_last_ip_$YDNS_HOST"
 
-YDNS_UPD_VERSION="20150506.2"
+YDNS_UPD_VERSION="20160730.1"
 
 if ! hash curl 2>/dev/null; then
 	echo "ERROR: cURL is missing."
