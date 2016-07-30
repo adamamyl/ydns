@@ -8,6 +8,8 @@
 # Define your yDNS account details and host you'd like to update.
 ##
 
+set -x
+
 YDNS_USER="user@host.xx"
 YDNS_PASSWD="secret"
 YDNS_HOST="myhost.ydns.eu"
@@ -27,6 +29,7 @@ usage () {
 	echo "Usage: $0 [options]"
 	echo ""
 	echo "Available options are:"
+    echo "  -f filepath    Uses defined configfile for values"
 	echo "  -h             Display usage"
 	echo "  -H HOST        YDNS host to update"
 	echo "  -u USERNAME    YDNS username for authentication"
@@ -73,8 +76,12 @@ write_msg () {
 verbose=0
 local_interface_addr=
 
-while getopts "hH:i:p:u:vV" opt; do
+while getopts "f:hH:i:p:u:vV" opt; do
 	case $opt in
+        f)
+            source $OPTARG
+            ;;
+
 		h)
 			usage
 			;;
