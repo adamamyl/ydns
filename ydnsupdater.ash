@@ -25,6 +25,7 @@ YDNS_USER="user@host.xx"
 YDNS_PASSWD="secret"
 YDNS_HOST="myhost.ydns.eu"
 YDNS_LASTIP_FILE="/tmp/ydns_last_ip_$YDNS_HOST"
+EXTADDR=$(wget http://ipinfo.io/ip -qO -)
 
 ##
 # Don't change anything below.
@@ -59,7 +60,7 @@ update_ip_address () {
 	ret=`curl --basic \
 		-u "$YDNS_USER:$YDNS_PASSWD" \
 		--silent \
-		https://ydns.io/api/v1/update/?host=${YDNS_HOST}\&ip=${current_ip}`
+		https://ydns.io/api/v1/update/?host=${YDNS_HOST}\&ip=${EXTADDR}`
 
 	echo $ret
 }
